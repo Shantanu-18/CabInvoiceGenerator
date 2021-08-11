@@ -21,7 +21,4 @@ namespace CabInvoiceGeneratorDemo
             this.type = type;
         }
     }
-
-
-
 }
