@@ -41,7 +41,6 @@ namespace CabInvoiceGeneratorTest
             invoiceGenerator = new InvoiceGenerator(RideType.NORMAL);
             Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 5), new Ride(4.0, 10) };
             InvoiceSummary summary = invoiceGenerator.CalculateFare(rides);
-            InvoiceSummary expectedSummary = new InvoiceSummary(3, 81.0);
             int numOfRides = summary.numberOfRides;
             double totalFare = summary.totalFare;
             double avgFare = summary.averageFare;
@@ -93,13 +92,12 @@ namespace CabInvoiceGeneratorTest
             invoiceGenerator = new InvoiceGenerator(RideType.PREMIUM);
             Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 5) };
             InvoiceSummary summary = invoiceGenerator.CalculateFare(rides);
-            InvoiceSummary expectedSummary = new InvoiceSummary(2, 51.5);
             int numOfRides = summary.numberOfRides;
             double totalFare = summary.totalFare;
             double avgFare = summary.averageFare;
             int expectedNumOfRides = 2;
-            double expectedTotalFare = 51.5;
-            double expectedAvgFare = 25.75;
+            double expectedTotalFare = 60;
+            double expectedAvgFare = 30;
             Assert.AreEqual(expectedNumOfRides, numOfRides);
             Assert.AreEqual(expectedTotalFare, totalFare);
             Assert.AreEqual(expectedAvgFare, avgFare);
